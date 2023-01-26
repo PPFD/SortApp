@@ -50,6 +50,28 @@ func linearSearchUnsorted(array []int, SearchElement int) {
 
 }
 
+// Функция реализует бинарный поиск элемента в отсортированном массиве
+func binarySearchSorted(array []int, amountOfElements int, SearchElement int) {
+	left := 0 // задаем левую и правую границы поиска
+	right := amountOfElements
+	search := -1 // найденный индекс элемента равен -1 (элемент не найден)
+	for left <= right {
+		mid := (left + right) / 2 // ищем середину отрезка
+
+		if SearchElement == array[mid] { // если ключевое поле равно искомому
+			search = mid // мы нашли требуемый элемент,
+			fmt.Println("Элемент находится на этой позиции", search+1)
+			break // выходим из цикла
+		}
+
+		if SearchElement < array[mid] { // если искомое ключевое поле меньше найденной середины
+			right = mid - 1
+		} else { // иначе
+			left = mid + 1 // смещаем левую границу, продолжим поиск в правой части
+		}
+	}
+}
+
 func main() {
 	return
 }
