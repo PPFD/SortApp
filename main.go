@@ -35,6 +35,21 @@ func writeArrayInFile(array []int, FileName string) {
 	}
 }
 
+// Функция реализует линейный поиск элемента в любом массиве
+func linearSearchUnsorted(array []int, SearchElement int) {
+
+	for index := 0; index < len(array); index++ {
+		if array[index] == SearchElement {
+			fmt.Println("Искомый элемент первый раз встречается на позиции ", index+1)
+			break
+		} else if index == len(array)-1 {
+			fmt.Println("Искомый элемент не содержится в массиве")
+			break
+		}
+	}
+
+}
+
 func main() {
 	return
 }
