@@ -88,6 +88,11 @@ func selectSort(array []int) []int {
 	return array
 }
 
+// Функция для проверки ветви
+func branchCheck() {
+
+}
+
 func main() {
 	return
 }
