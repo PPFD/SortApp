@@ -93,6 +93,8 @@ func branchCheck() {
 	return
 }
 
+func branchCheck1() {}
+
 func main() {
 	return
 }
