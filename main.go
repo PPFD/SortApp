@@ -72,6 +72,22 @@ func binarySearchSorted(array []int, amountOfElements int, SearchElement int) {
 	}
 }
 
+// Функция реализует сортировку выбором
+func selectSort(array []int) []int {
+	for i := 0; i < len(array)-1; i++ {
+		min := i
+		for j := i + 1; j < len(array); j++ {
+			if array[j] < array[min] {
+				min = j
+			}
+		}
+		if array[min] != array[i] {
+			array[min], array[i] = array[i], array[min]
+		}
+	}
+	return array
+}
+
 func main() {
 	return
 }
