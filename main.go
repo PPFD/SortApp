@@ -110,6 +110,37 @@ func insertionSort(array []int) []int {
 	return array
 }
 
+// Функция реализует быструю сортировку
+func Partition(array []int, l int, r int) int { // Выбирает опорным элементом послейдний элемент массива
+	pivot := array[r] // ставит элементы меньше опорного слева от него а больше справа
+	less := l
+
+	for i := l; i < r; i++ {
+		if array[i] <= pivot {
+			array[i], array[less] = array[less], array[i]
+			less++
+		}
+	}
+	array[r], array[less] = array[less], array[r]
+	return less
+}
+
+func QuickSortImpl(array []int, l int, r int) []int { // Рекурсивная функция для быстрой сортировки
+	if l < r {
+		q := Partition(array, l, r)
+		QuickSortImpl(array, l, q-1)
+		QuickSortImpl(array, q+1, r)
+	}
+	return array
+}
+
+func QuickSort(array []int) []int {
+	if len(array) > 0 {
+		QuickSortImpl(array, 0, len(array)-1)
+	}
+	return array
+}
+
 func main() {
 	return
 }
