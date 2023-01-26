@@ -90,7 +90,7 @@ func selectSort(array []int) []int {
 
 // Функция для проверки ветви
 func branchCheck() {
-
+	return
 }
 
 func main() {
