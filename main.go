@@ -100,6 +100,16 @@ func bubbleSort(array []int) []int {
 	return array
 }
 
+// Функция реализует сортировку вставками
+func insertionSort(array []int) []int {
+	for i := 1; i < len(array); i++ {
+		for j := i; j > 0 && array[j-1] > array[j]; j-- {
+			array[j-1], array[j] = array[j], array[j-1]
+		}
+	}
+	return array
+}
+
 func main() {
 	return
 }
